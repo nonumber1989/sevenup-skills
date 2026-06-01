@@ -4,10 +4,14 @@ description: >
   Parse, analyze, and summarize MOBI ebook files. Extract table of contents,
   chapter content, metadata, generate chapter summaries, and provide comprehensive
   book evaluations. Supports optional integration with Douban (豆瓣) book reviews
-  for cross-validation.
-version: 2.0.0
-author: sevenup-skills
-tags: [ebook, mobi, kindle, parser, chinese, analysis]
+  for cross-validation. Use this whenever the user mentions MOBI, Kindle ebooks,
+  ebook analysis, or wants to parse/summarize Chinese ebooks.
+compatibility: requires calibre (brew install --cask calibre)
+license: MIT
+metadata:
+  version: 2.0.0
+  supported_formats: [MOBI, AZW, AZW3, PRC]
+  chapter_formats: [第X章, standalone numerals, 序言/导言, 结语/后记, 致谢]
 ---
 
 # MOBI Reader & Analyzer
