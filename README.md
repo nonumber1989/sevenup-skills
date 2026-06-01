@@ -2,6 +2,19 @@
 
 Claude Code skills collection — pluggable modules that extend Claude Code with specialized domain knowledge and tooling.
 
+## Repository Structure
+
+```
+sevenup-skills/
+├── README.md
+└── skills/                    # All skills live here
+    └── mobi-reader/           # One subfolder per skill
+        ├── mobi-reader.skill  # Packaged skill (installable via /plugin install)
+        ├── SKILL.md           # Skill documentation
+        └── scripts/           # Skill scripts/tools
+            └── mobi_parser.py
+```
+
 ## Skills
 
 ### mobi-reader (v2.0.0)
@@ -24,7 +37,7 @@ git clone https://github.com/nonumber1989/sevenup-skills.git
 
 In Claude Code, install the packaged skill:
 ```
-/plugin install sevenup-skills/mobi-reader.skill
+/plugin install sevenup-skills/skills/mobi-reader/mobi-reader.skill
 ```
 
 ### Option 2: Manual install
@@ -33,20 +46,27 @@ In Claude Code, install the packaged skill:
 git clone https://github.com/nonumber1989/sevenup-skills.git
 
 # Copy SKILL.md + scripts to your project or global skills
-cp -r sevenup-skills/mobi-reader ~/.claude/skills/
+cp -r sevenup-skills/skills/mobi-reader ~/.claude/skills/
 ```
 
 ## Usage
 
 ```bash
 # Parse a MOBI file
-python3 mobi-reader/scripts/mobi_parser.py book.mobi --chapter-titles
+python3 skills/mobi-reader/scripts/mobi_parser.py book.mobi --chapter-titles
 
 # Export all data as JSON
-python3 mobi-reader/scripts/mobi_parser.py book.mobi --json output.json
+python3 skills/mobi-reader/scripts/mobi_parser.py book.mobi --json output.json
 ```
 
-See [SKILL.md](./mobi-reader/SKILL.md) for full documentation.
+See [SKILL.md](./skills/mobi-reader/SKILL.md) for full documentation.
+
+## Adding a New Skill
+
+1. Create a new subfolder under `skills/`: `mkdir -p skills/<skill-name>/scripts`
+2. Add your `SKILL.md` and any scripts/tools
+3. Optionally package as `.skill` file for `/plugin install` support
+4. Update this README with the new skill entry
 
 ## License
 

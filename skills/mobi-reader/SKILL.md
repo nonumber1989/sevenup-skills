@@ -31,13 +31,13 @@ and provide comprehensive evaluations with optional Douban (豆瓣) cross-refere
 git clone https://github.com/nonumber1989/sevenup-skills.git
 
 # Install to Claude Code (project-level)
-cp sevenup-skills/mobi-reader/mobi-reader.md .claude/skills/
+cp -r sevenup-skills/skills/mobi-reader .claude/skills/
 
 # Or install globally
-cp sevenup-skills/mobi-reader/mobi-reader.md ~/.claude/skills/
+cp -r sevenup-skills/skills/mobi-reader ~/.claude/skills/
 ```
 
-The bundled parser script is at `scripts/mobi_parser.py` — copy it to your project or add it to PATH.
+The bundled parser script is at `skills/mobi-reader/scripts/mobi_parser.py` — copy it to your project or add it to PATH.
 
 ## Usage Flow
 
